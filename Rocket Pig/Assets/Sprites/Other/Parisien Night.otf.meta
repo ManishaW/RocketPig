@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 904ea09ceb41c2141a65472da520eb5a
+timeCreated: 1495416048
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Parisien Night
+  fontNames:
+  - Parisien Night
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 31171af6773fe354bb666f55f8010168, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
