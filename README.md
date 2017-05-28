@@ -6,9 +6,9 @@ CONTENTS
 1. About the game
 2. System Requirements
 3. Controls
-  1.1 Fueling up
-  1.2 Tilt to catch stars, power ups and avoid asteroid showers 
-  1.3 Swipe to move comets and satelites out of the way
+  a) Fueling up
+  b) Tilt to catch stars, power ups and avoid asteroid showers 
+  c) Swipe to move comets and satelites out of the way
 4. Shop
 5. High Scores 
 6. Settings
