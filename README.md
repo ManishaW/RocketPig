@@ -32,13 +32,13 @@ Version: Android v. 2.3.1
 _____________________________________________________________________________________
 3) CONTROLS
 __________________
-a) Fueling up
+a) Fueling up: 
 The first part of the game involves fueling up the rocket. At the bottom of the screen, slide as many corn into the slot as possible within 5 seconds. After that, it's blast off! (maybe changed to two tap alternation fuel up)
 
-b) Tilt to catch stars, power ups and avoid asteroid showers 
+b) Tilt to catch stars, power ups and avoid asteroid showers: 
 Tilt your device to move the pig side to side. Catch stars to gain more points. Get power ups to use them right away. Power ups can include invinsibility, shrinking and Xtra Fuel(?). 
 
-c) Swipe to move comets and satelites out of the way
+c) Swipe to move comets and satelites out of the way: 
 Move comets and satelites out of the way or avoid them. 
 
 _____________________________________________________________________________________
