@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Play page.unity
+- path: Assets/Scenes/Preloader.unity
   isLoaded: 1
   isActive: 1

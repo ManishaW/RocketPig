@@ -13,7 +13,7 @@ public class PlayGameScene : MonoBehaviour
 	public float CountdownFrom;
 	public float CountdownTimer;
 	public Text score;
-	public static bool blastOffTrigger=false;
+	public static bool blastOffTriggered=false;
 
 	// Use this for initialization
 	void Awake(){
@@ -35,6 +35,7 @@ public class PlayGameScene : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		score.text = pointsCounter.ToString ("00");
 		//do the 5 second countdown timer
 		if (CountdownTimer >= -5f) {
 			CountdownTimer = CountdownFrom - Time.timeSinceLevelLoad;
@@ -42,17 +43,17 @@ public class PlayGameScene : MonoBehaviour
 			countdownText.text = displayTime;
 		}
 			
-		if (countdownText.text.Equals ("0")) {
+		if (countdownText.text.Equals ("0") && blastOffTriggered==false) {
 			countdownText.text = "Blast off!";
 			leftFinger.gameObject.SetActive (false);
 			rightFinger.gameObject.SetActive (false);
 			countdownText.fontSize = 175;
-			Invoke ("blastOff", 1.5f);
-			Handheld.Vibrate(); //not sure if words
-			blastOffTrigger = true;
-		}
 
-	
+			Invoke ("blastOff", 1.5f);
+			//Handheld.Vibrate(); //not sure efficiency
+
+		}
+			
 		
 	}
 
@@ -61,10 +62,8 @@ public class PlayGameScene : MonoBehaviour
 	{
 		if (leftFinger.interactable == true) {
 			pointsCounter += 1;
-			Debug.Log (pointsCounter);
 			leftFinger.interactable = false;
 			rightFinger.interactable = true;
-			score.text = pointsCounter.ToString ("00");
 		}
 
 
@@ -75,17 +74,15 @@ public class PlayGameScene : MonoBehaviour
 	{
 		if (rightFinger.interactable == true) {
 			pointsCounter += 1;
-			Debug.Log (pointsCounter);
 			rightFinger.interactable = false;
 			leftFinger.interactable = true;
-			score.text = pointsCounter.ToString ("00");
 		}
 	}
 
 	private void blastOff ()
 	{
-		//fix this method laterrr
+		//get rid off counddown
 		countdownText.gameObject.SetActive (false);
-
+		blastOffTriggered = true;
 	}
 }
