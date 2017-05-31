@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayGameScene : MonoBehaviour
 {
 	//declare variables
-	public static int pointsCounter = 0;
+	public static int pointsCounter;
 	public Button leftFinger;
 	public Button rightFinger;
 	public Text countdownText;
@@ -18,7 +18,6 @@ public class PlayGameScene : MonoBehaviour
 	// Use this for initialization
 	void Awake(){
 		DontDestroyOnLoad (MainMenuScene.BGM);
-		Debug.Log ("did not destruct bgm");
 	}
 
 	void Start ()
@@ -45,6 +44,8 @@ public class PlayGameScene : MonoBehaviour
 			
 		if (countdownText.text.Equals ("0") && blastOffTriggered==false) {
 			countdownText.text = "Blast off!";
+			scroll.speed = 0.35f;
+			Debug.Log ("blasttttt");
 			leftFinger.gameObject.SetActive (false);
 			rightFinger.gameObject.SetActive (false);
 			countdownText.fontSize = 175;
