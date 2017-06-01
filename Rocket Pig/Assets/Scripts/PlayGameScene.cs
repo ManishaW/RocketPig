@@ -6,54 +6,61 @@ using UnityEngine.UI;
 public class PlayGameScene : MonoBehaviour
 {
 	//declare variables
-	public static int pointsCounter;
+	public static int starCounter;
+	public static int fuelCounter;
 	public Button leftFinger;
 	public Button rightFinger;
 	public Text countdownText;
 	public float CountdownFrom;
 	public float CountdownTimer;
-	public Text score;
+	public Text starCounterScore;
+	public Text fuelCounterScore;
 	public static bool blastOffTriggered=false;
 
-	// Use this for initialization
-	void Awake(){
-		DontDestroyOnLoad (MainMenuScene.BGM);
-	}
+
 
 	void Start ()
 	{
+		
 		//set objects
 		CountdownTimer = CountdownFrom - Time.timeSinceLevelLoad;
 		leftFinger = GameObject.Find ("leftFinger").GetComponent<Button> ();
+		leftFinger.enabled = false;
 		rightFinger = GameObject.Find ("rightFinger").GetComponent<Button> ();
+		rightFinger.enabled = false;
 		countdownText = GameObject.Find ("Countdown").GetComponent<Text> ();
-		score = GameObject.Find ("score").GetComponent<Text> ();
+		fuelCounterScore = GameObject.Find ("fuelScore").GetComponent<Text> ();
+		starCounterScore = GameObject.Find ("starsScore").GetComponent<Text> ();
 
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{
-		score.text = pointsCounter.ToString ("00");
+		starCounterScore.text = (starCounter).ToString ("00");
+		fuelCounterScore.text = (fuelCounter).ToString ("00");
+
 		//do the 5 second countdown timer
-		if (CountdownTimer >= -5f) {
+		if (CountdownTimer >= -7f) {
 			CountdownTimer = CountdownFrom - Time.timeSinceLevelLoad;
-			string displayTime = (5 + (CountdownTimer * 1)).ToString ("0");
-			countdownText.text = displayTime;
+			string displayTime = (7 + (CountdownTimer * 1)).ToString ("0");
+			if ((7 + (CountdownTimer * 1)) <= 5) {
+				countdownText.text = displayTime;
+				rightFinger.enabled = true;
+				leftFinger.enabled = true;
+			}
 		}
-			
 		if (countdownText.text.Equals ("0") && blastOffTriggered==false) {
 			countdownText.text = "Blast off!";
-			scroll.speed = 0.35f;
-			Debug.Log ("blasttttt");
+			ScrollSky.speed = 0.4f;
 			leftFinger.gameObject.SetActive (false);
 			rightFinger.gameObject.SetActive (false);
 			countdownText.fontSize = 175;
 
 			Invoke ("blastOff", 1.5f);
 			//Handheld.Vibrate(); //not sure efficiency
+			}
 
-		}
 			
 		
 	}
@@ -62,7 +69,7 @@ public class PlayGameScene : MonoBehaviour
 	public void clickLeftFinger ()
 	{
 		if (leftFinger.interactable == true) {
-			pointsCounter += 1;
+			fuelCounter += 1;
 			leftFinger.interactable = false;
 			rightFinger.interactable = true;
 		}
@@ -74,7 +81,7 @@ public class PlayGameScene : MonoBehaviour
 	public void clickRightFinger ()
 	{
 		if (rightFinger.interactable == true) {
-			pointsCounter += 1;
+			fuelCounter += 1;
 			rightFinger.interactable = false;
 			leftFinger.interactable = true;
 		}

@@ -46,15 +46,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\MainMenuScene.cs" />
+     <Compile Include="Assets\Scripts\AnimationManager.cs" />
+     <Compile Include="Assets\Scripts\CometFall.cs" />
+     <Compile Include="Assets\Scripts\FuelScript.cs" />
+     <Compile Include="Assets\Scripts\GameOver.cs" />
+     <Compile Include="Assets\Scripts\MainMenuSceneScript.cs" />
      <Compile Include="Assets\Scripts\PlayGameScene.cs" />
+     <Compile Include="Assets\Scripts\PowerUpFall.cs" />
      <Compile Include="Assets\Scripts\PreloaderScene.cs" />
      <Compile Include="Assets\Scripts\RocketPig.cs" />
+     <Compile Include="Assets\Scripts\ScrollSky.cs" />
+     <Compile Include="Assets\Scripts\StarFall.cs" />
      <Compile Include="Assets\Scripts\TouchDrag.cs" />
      <Compile Include="Assets\Scripts\TouchSprite.cs" />
-     <Compile Include="Assets\Scripts\cometFall.cs" />
-     <Compile Include="Assets\Scripts\fuelScript.cs" />
-     <Compile Include="Assets\Scripts\scroll.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
