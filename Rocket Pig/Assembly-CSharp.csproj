@@ -46,10 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AnimationManager.cs" />
      <Compile Include="Assets\Scripts\CometFall.cs" />
      <Compile Include="Assets\Scripts\FuelScript.cs" />
      <Compile Include="Assets\Scripts\GameOver.cs" />
+     <Compile Include="Assets\Scripts\GameOverOptions.cs" />
      <Compile Include="Assets\Scripts\MainMenuSceneScript.cs" />
      <Compile Include="Assets\Scripts\PlayGameScene.cs" />
      <Compile Include="Assets\Scripts\PowerUpFall.cs" />

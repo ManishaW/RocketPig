@@ -15,15 +15,17 @@ public class GameOver : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (RocketPig.die==true && playonce==false){
-			
-			Invoke ("gameOverAnimate", 3);
+			Invoke ("gameOverAnimate", 0f);
 		}
 		
 	}
 
 	void gameOverAnimate(){
+		if (RocketPig.die==true && playonce==false){
 		clip.Play ();
-		Debug.Log ("play animation gameoverrr");
+		}
+		Debug.Log (myAnimator.name+ " called GameOver"+ RocketPig.die +" "+ playonce);
 		playonce = true;
+
 	}
 }

@@ -27,17 +27,16 @@ public class FuelScript : MonoBehaviour {
 			content.fillAmount = amount;
 		} 
 		if (PlayGameScene.blastOffTriggered == true && fuelout==false && RocketPig.die==false) {
-			float fuel=((float)PlayGameScene.fuelCounter)/100;
+			float fuel=((float)PlayGameScene.fuelCounter);
 		
-			fuel = fuel - ((Time.time/50)-0.04f);
-			content.fillAmount = fuel;
-			Debug.Log ("fuel: " + fuel);
-			//Debug.Log ("fuel: " + fuel + "time " + ((Time.time/100)-0.05f)+ "points"+(float)PlayGameScene.pointsCounter/100);
+			fuel = fuel - ((Time.time-0.4f)/10)-0.5f;
+			//Debug.Log ("fuel: " + fuel);
+			content.fillAmount = fuel/100;
 			if (fuel <= 1) {
 				//call animation
-				//call sound
 				MainMenuSceneScript.fuelWarning.Play();
 				clip.Play();
+
 			}
 			if (fuel <= 0) {
 				fuelout = true;

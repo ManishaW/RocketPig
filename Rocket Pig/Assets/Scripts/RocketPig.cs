@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RocketPig : MonoBehaviour
 {
@@ -8,12 +9,18 @@ public class RocketPig : MonoBehaviour
 	public GameObject pig;
 	public bool flipped = false;
 	public static bool die = false;
-	public bool invinsible = true;
+	public bool invinsible = false;
+
+	public Text starsFinal;
+	public Text fuelFinal;
 	// Use this for initialization
 	void Start ()
 	{
 		pig = GameObject.Find ("Pig");
 		upwardForce = pig.GetComponent<Rigidbody2D> ();
+		die = false;
+		starsFinal = GameObject.Find ("starsScoreFinal").GetComponent<Text> ();
+		fuelFinal = GameObject.Find ("fuelScoreFinal").GetComponent<Text> ();
 
 	}
 	
@@ -65,13 +72,14 @@ public class RocketPig : MonoBehaviour
 			transform.localScale = new Vector3 (transform.localScale.x, transform.localScale.y * -1, transform.localScale.z);
 			flipped = true;
 		}
-	
+		starsFinal.text = PlayGameScene.starCounter.ToString ("00");
+		fuelFinal.text = PlayGameScene.fuelCounter.ToString ("00");
+
 	
 	}
 
 	void OnCollisionEnter2D (Collision2D col)
 	{
-
 		if (col.gameObject.name == "COMET(Clone)" && invinsible==false) {
 			die = true;
 			stopFlying ();
@@ -87,9 +95,6 @@ public class RocketPig : MonoBehaviour
 
 		}
 		if (col.gameObject.name == "powerup(Clone)") {
-			Destroy (col.gameObject);
-			//be invincible, maybe new image
-			//probs a boolean
 			Destroy (col.gameObject);
 			invinsible = true;
 			upwardForce.isKinematic = true;
