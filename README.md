@@ -18,7 +18,7 @@ CONTENTS
 _____________________________________________________________________________________
 1) ABOUT
 __________________
-Rocket Pig is a fun, addicting game that you can play on your mobile device. Try to get the high score by fueling up as fast as you can, collecting stars and powering up! Move comets and satellites out of the way and be sure to avoid any asteroid showers!
+Rocket Pig is an addicting casual game that you can play on your android device. Try to get the high score by fueling up as fast as you can, collecting stars and powering up! Move comets and satellites out of the way and be sure to avoid any asteroid showers!
 
 File Size: right now-> 40.86 MB Goal: n/a
 
