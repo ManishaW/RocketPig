@@ -16,11 +16,10 @@ public class PowerUpFall : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
 	}
 
 	void makePowerUp(){
-		if (RocketPig.die == false && PlayGameScene.fuelCounter>0) {
+		if (RocketPig.die == false && PlayGameScene.fuelCounter>0 && PlayGameScene.blastOffTriggered) {
 			Vector3 position = new Vector3 (Random.Range (-350, 350), 700, 0);		
 			newPowerUp = Instantiate (powerUp, position, Quaternion.identity) as GameObject;
 			newPowerUp.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform, false);

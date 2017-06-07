@@ -11,55 +11,57 @@ public class PlayGameScene : MonoBehaviour
 	public Button leftFinger;
 	public Button rightFinger;
 	public Text countdownText;
-	public float CountdownFrom;
 	public float CountdownTimer;
 	public Text starCounterScore;
 	public Text fuelCounterScore;
-	public static bool blastOffTriggered=false;
-
+	public bool startCountdownTrigger;
+	public static bool blastOffTriggered;
+	public static float startTime;
 
 
 	void Start ()
 	{
-		
 		//set objects
-		CountdownTimer = CountdownFrom - Time.timeSinceLevelLoad;
 		leftFinger = GameObject.Find ("leftFinger").GetComponent<Button> ();
-		leftFinger.enabled = false;
 		rightFinger = GameObject.Find ("rightFinger").GetComponent<Button> ();
-		rightFinger.enabled = false;
 		countdownText = GameObject.Find ("Countdown").GetComponent<Text> ();
 		fuelCounterScore = GameObject.Find ("fuelScore").GetComponent<Text> ();
 		starCounterScore = GameObject.Find ("starsScore").GetComponent<Text> ();
 
+		//to be reset each time game is played
+		blastOffTriggered = false;
+		starCounter=0;
+		fuelCounter=0;
+		CountdownTimer = 3; //starting integer for timer (easily changeable)
+		startCountdownTrigger = false;
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{
+		//update the scores 
 		starCounterScore.text = (starCounter).ToString ("00");
 		fuelCounterScore.text = (fuelCounter).ToString ("00");
 
-		//do the 5 second countdown timer
-		if (CountdownTimer >= -7f) {
-			CountdownTimer = CountdownFrom - Time.timeSinceLevelLoad;
-			string displayTime = (7 + (CountdownTimer * 1)).ToString ("0");
-			if ((7 + (CountdownTimer * 1)) <= 5) {
-				countdownText.text = displayTime;
-				rightFinger.enabled = true;
-				leftFinger.enabled = true;
-			}
+		//do the 3 second countdown timer
+		if (CountdownTimer>0 && startCountdownTrigger==true) {
+			CountdownTimer = CountdownTimer - Time.deltaTime;
+			string displayTime = CountdownTimer.ToString ("0");
+			countdownText.text = displayTime;
+			
 		}
-		if (countdownText.text.Equals ("0") && blastOffTriggered==false) {
+		//countdown is 0 and pig is not flying yet
+		if (countdownText.text.Equals ("0") && blastOffTriggered == false) {
 			countdownText.text = "Blast off!";
-			ScrollSky.speed = 0.4f;
+			ScrollSky.speed = 0.6f;
 			leftFinger.gameObject.SetActive (false);
 			rightFinger.gameObject.SetActive (false);
 			countdownText.fontSize = 175;
 
+			//start flying
 			Invoke ("blastOff", 1.5f);
 			//Handheld.Vibrate(); //not sure efficiency
-			}
+		}
 
 			
 		
@@ -72,9 +74,10 @@ public class PlayGameScene : MonoBehaviour
 			fuelCounter += 1;
 			leftFinger.interactable = false;
 			rightFinger.interactable = true;
+			if (startCountdownTrigger == false) {
+				startCountdownTrigger = true;
+			}
 		}
-
-
 	}
 
 	//right tap
@@ -84,13 +87,23 @@ public class PlayGameScene : MonoBehaviour
 			fuelCounter += 1;
 			rightFinger.interactable = false;
 			leftFinger.interactable = true;
+			if (startCountdownTrigger == false) {
+				startCountdownTrigger = true;
+			}
 		}
 	}
 
-	private void blastOff ()
-	{
+	//start flying
+	private void blastOff (){
+		Debug.Log ("blastoff not yet triggered");
 		//get rid off counddown
-		countdownText.gameObject.SetActive (false);
-		blastOffTriggered = true;
-	}
+		if (blastOffTriggered == false) {
+			Debug.Log ("blastOff!");
+			countdownText.gameObject.SetActive (false);
+			blastOffTriggered = true;
+			startTime = Time.time;
+			Debug.Log ("start time: " + startTime);
+		}
 }
+}
+

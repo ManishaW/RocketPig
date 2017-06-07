@@ -9,12 +9,12 @@ public class FuelScript : MonoBehaviour {
 	[SerializeField]
 	private Image content;
 	public static bool fuelout;
-	public GameObject myAnimator;
-	public Animation clip;
+	public float fuelstart;
+	public float fuelPresent;
 
 	// Use this for initialization
 	void Start () {
-		clip = myAnimator.GetComponentInChildren<Animation> ();
+
 	}
 	
 	// Update is called once per frame
@@ -22,23 +22,28 @@ public class FuelScript : MonoBehaviour {
 		handleBar ();
 	}
 	void handleBar(){
+		//fuel up
 		if (PlayGameScene.blastOffTriggered == false) {
 			float amount = ((float)PlayGameScene.fuelCounter / 100);
 			content.fillAmount = amount;
 		} 
+		//fuel loss over time
 		if (PlayGameScene.blastOffTriggered == true && fuelout==false && RocketPig.die==false) {
-			float fuel=((float)PlayGameScene.fuelCounter);
-		
-			fuel = fuel - ((Time.time-0.4f)/10)-0.5f;
-			//Debug.Log ("fuel: " + fuel);
-			content.fillAmount = fuel/100;
-			if (fuel <= 1) {
+			fuelstart=((float)PlayGameScene.fuelCounter);
+			fuelPresent = fuelstart/100 - ((Time.time-PlayGameScene.startTime)/100);
+			Debug.Log ("this scene start time: " + (PlayGameScene.startTime).ToString());
+			Debug.Log ("delta time: " + (Time.time- (float)PlayGameScene.startTime).ToString());
+			content.fillAmount = fuelPresent;
+			Debug.Log ("fuel running out " + fuelPresent );
+			//still needs work, Warning that fuel is running out
+			if (fuelPresent <= 0.25) {
 				//call animation
-				MainMenuSceneScript.fuelWarning.Play();
-				clip.Play();
+				MainMenuOptions.fuelWarning.Play();
 
 			}
-			if (fuel <= 0) {
+			//fuel is out!
+			if (fuelPresent <= 0) {
+				Debug.Log ("fuel out! " + fuelPresent );				
 				fuelout = true;
 
 			}

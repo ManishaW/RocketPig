@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverOptions : MonoBehaviour {
 
@@ -13,15 +14,18 @@ public class GameOverOptions : MonoBehaviour {
 	void Update () {
 		
 	}
+
 	public void restartOnClick ()
 	{
-		Application.LoadLevel ("Play page");
+		SceneManager.LoadScene("Play page");
 		RocketPig.die = false;
 	}
 
+
+
 	public void backToMainMenuOnClick ()
 	{
-		Application.LoadLevel ("Main menu");
+		SceneManager.LoadScene("Main menu");
 		RocketPig.die = false;
 
 	}
