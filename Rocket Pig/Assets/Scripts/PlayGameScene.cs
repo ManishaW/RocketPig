@@ -25,7 +25,7 @@ public class PlayGameScene : MonoBehaviour
 		leftFinger = GameObject.Find ("leftFinger").GetComponent<Button> ();
 		rightFinger = GameObject.Find ("rightFinger").GetComponent<Button> ();
 		countdownText = GameObject.Find ("Countdown").GetComponent<Text> ();
-		fuelCounterScore = GameObject.Find ("fuelScore").GetComponent<Text> ();
+		fuelCounterScore = GameObject.Find ("fuelCount").GetComponent<Text> ();
 		starCounterScore = GameObject.Find ("starsScore").GetComponent<Text> ();
 
 		//to be reset each time game is played
@@ -42,7 +42,7 @@ public class PlayGameScene : MonoBehaviour
 		//update the scores 
 		starCounterScore.text = (starCounter).ToString ("00");
 		fuelCounterScore.text = (fuelCounter).ToString ("00");
-
+		Debug.Log (fuelCounterScore.text);
 		//do the 3 second countdown timer
 		if (CountdownTimer>0 && startCountdownTrigger==true) {
 			CountdownTimer = CountdownTimer - Time.deltaTime;
@@ -95,14 +95,13 @@ public class PlayGameScene : MonoBehaviour
 
 	//start flying
 	private void blastOff (){
-		Debug.Log ("blastoff not yet triggered");
 		//get rid off counddown
 		if (blastOffTriggered == false) {
 			Debug.Log ("blastOff!");
 			countdownText.gameObject.SetActive (false);
 			blastOffTriggered = true;
 			startTime = Time.time;
-			Debug.Log ("start time: " + startTime);
+
 		}
 }
 }

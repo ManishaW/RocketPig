@@ -20,16 +20,17 @@ public class MainMenuOptions : MonoBehaviour
 	{
 		allAudio = GetComponents<AudioSource> ();
 		BGM = allAudio [0];
-		Debug.Log (allAudio.Length);
+		//Debug.Log (allAudio.Length);
 		soundClick = allAudio [1];
 		playGameMusic = allAudio [2];
 		starCaught = allAudio [3];
 		fuelWarning = allAudio [4];
 		muteAllSounds = false;
-		if (Application.loadedLevelName==("Main menu")){
+
+		if (SceneManager.GetActiveScene().name==("Main menu")){
 			BGM.Play ();
 		}
-		if (Application.loadedLevelName==("Play page")){
+		if (SceneManager.GetActiveScene().name==("Play page")){
 			BGM.Stop ();
 			playGameMusic.Play ();
 		}
@@ -42,6 +43,7 @@ public class MainMenuOptions : MonoBehaviour
 	void Update ()
 	{
 		
+
 	}
 
 	public void playOnClick ()

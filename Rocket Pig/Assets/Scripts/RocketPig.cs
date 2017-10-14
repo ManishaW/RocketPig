@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class RocketPig : MonoBehaviour
 {
 	public Rigidbody2D upwardForce;
@@ -16,6 +17,7 @@ public class RocketPig : MonoBehaviour
 	public Text starsFinal;
 	public Text fuelFinal;
 	public static Text totalCounter;
+
 
 
 	// Use this for initialization
@@ -35,6 +37,11 @@ public class RocketPig : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		//screen edges:
+		float dist = (pig.transform.position - Camera.main.transform.position).z;
+		float leftBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, dist)).x;
+		float rightBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, dist)).x;
+
 		//make pig fly when blastOff was triggered (in PlaySceneScene)
 		if (PlayGameScene.blastOffTriggered) {
 			//tilt 
@@ -47,15 +54,16 @@ public class RocketPig : MonoBehaviour
 		}
 
 		//resrict sides, do not let the pig move outside the screen
-		if (transform.position.x>700) {
+		//500, +(pig.GetComponent<BoxCollider2D>().bounds.size.x)
+		if (transform.position.x>(rightBorder)){
 			Vector3 pos = transform.position;
-			pos.x = 700;
+			pos.x = rightBorder;
 			transform.position = pos;
 		}
-
-		if (transform.position.x<100) {
+		//-34, +(pig.GetComponent<BoxCollider2D>().bounds.size.x/2)
+		if (transform.position.x<(leftBorder)) {
 			Vector3 pos = transform.position;
-			pos.x = 100;
+			pos.x = leftBorder;
 			transform.position = pos;
 		}
 	}

@@ -30,7 +30,7 @@ public class FuelScript : MonoBehaviour {
 		//fuel loss over time
 		if (PlayGameScene.blastOffTriggered == true && fuelout==false && RocketPig.die==false) {
 			fuelstart=((float)PlayGameScene.fuelCounter);
-			fuelPresent = fuelstart/100 - ((Time.time-PlayGameScene.startTime)/100);
+			fuelPresent = fuelstart/100 - ((Time.time-PlayGameScene.startTime)/100) ;
 			Debug.Log ("this scene start time: " + (PlayGameScene.startTime).ToString());
 			Debug.Log ("delta time: " + (Time.time- (float)PlayGameScene.startTime).ToString());
 			content.fillAmount = fuelPresent;
