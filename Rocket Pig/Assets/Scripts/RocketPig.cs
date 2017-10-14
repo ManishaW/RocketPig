@@ -26,8 +26,8 @@ public class RocketPig : MonoBehaviour
 		pig = GameObject.Find ("Pig");
 		upwardForce = pig.GetComponent<Rigidbody2D> ();
 		die = false;
-		starsFinal = GameObject.Find ("starsScoreFinal").GetComponent<Text> ();
-		fuelFinal = GameObject.Find ("fuelScoreFinal").GetComponent<Text> ();
+//		starsFinal = GameObject.Find ("starsScoreFinal").GetComponent<Text> ();
+//		fuelFinal = GameObject.Find ("fuelScoreFinal").GetComponent<Text> ();
 		totalCounter = GameObject.Find ("totalScoreFinal").GetComponent<Text> ();
 		normalPig=pig.GetComponent<Image> ().sprite;
 		FuelScript.fuelout = false;
@@ -82,9 +82,9 @@ public class RocketPig : MonoBehaviour
 		}
 
 		//final scores on gameover screen
-		starsFinal.text = PlayGameScene.starCounter.ToString ("00");
-		fuelFinal.text = PlayGameScene.fuelCounter.ToString ("00");
-		totalCounter.text = "= " + (PlayGameScene.fuelCounter + PlayGameScene.starCounter).ToString ("00") ;
+		//starsFinal.text = PlayGameScene.starCounter.ToString ("00");
+		//fuelFinal.text = PlayGameScene.fuelCounter.ToString ("00");
+		totalCounter.text = (PlayGameScene.fuelCounter + PlayGameScene.starCounter).ToString ("00") ;
 			
 	}
 

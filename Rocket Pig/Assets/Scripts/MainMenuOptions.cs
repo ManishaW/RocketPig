@@ -8,9 +8,9 @@ public class MainMenuOptions : MonoBehaviour
 {
 	public  AudioSource[] allAudio;
 
-	public static AudioSource BGM;
-	public AudioSource soundClick;
-	public AudioSource playGameMusic;
+	public AudioSource BGM;
+	public static AudioSource soundClick;
+	public static AudioSource playGameMusic;
 	public static AudioSource starCaught;
 	public static AudioSource fuelWarning;
 
@@ -20,7 +20,6 @@ public class MainMenuOptions : MonoBehaviour
 	{
 		allAudio = GetComponents<AudioSource> ();
 		BGM = allAudio [0];
-		//Debug.Log (allAudio.Length);
 		soundClick = allAudio [1];
 		playGameMusic = allAudio [2];
 		starCaught = allAudio [3];
@@ -28,7 +27,7 @@ public class MainMenuOptions : MonoBehaviour
 		muteAllSounds = false;
 
 		if (SceneManager.GetActiveScene().name==("Main menu")){
-			BGM.Play ();
+			BGM.Play();
 		}
 		if (SceneManager.GetActiveScene().name==("Play page")){
 			BGM.Stop ();

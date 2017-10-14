@@ -19,7 +19,7 @@ public class StarFall : MonoBehaviour {
 
 	void makeStar(){
 		if (RocketPig.die == false && PlayGameScene.fuelCounter>0 && PlayGameScene.blastOffTriggered) {
-			Vector3 position = new Vector3 (Random.Range (-350, 350), 700, 0);
+			Vector3 position = new Vector3 (Random.Range (-350, 350), 800, 0);
 			newStar = Instantiate (star, position, Quaternion.identity) as GameObject;
 			newStar.transform.SetParent (GameObject.FindGameObjectWithTag ("Canvas").transform, false);
 		}
