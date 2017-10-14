@@ -18,7 +18,7 @@ public class CometFall : MonoBehaviour {
 			Vector3 position = new Vector3 (Random.Range (-350, 350), 700, 0);
 			comet.GetComponent<Rigidbody2D> ().gravityScale = Random.Range (10, 20);
 			comet.transform.localScale= new Vector3 (1,1,0);
-			float scale = Random.Range (-0.5f, 0.5f);
+			float scale = Random.Range (-0.5f,0.5f);
 			comet.transform.localScale += new Vector3 (scale, scale, 0);
 		
 			newComet = Instantiate (comet, position, Quaternion.identity) as GameObject;
