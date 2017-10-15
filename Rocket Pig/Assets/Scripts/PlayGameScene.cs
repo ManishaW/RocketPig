@@ -19,6 +19,7 @@ public class PlayGameScene : MonoBehaviour
 	public static float startTime;
 	public static bool tenStarFuelUpTrigger;
 	int tempStars;
+	public static int highscore;
 
 	void Start ()
 	{
@@ -36,6 +37,8 @@ public class PlayGameScene : MonoBehaviour
 		CountdownTimer = 3; //starting integer for timer (easily changeable)
 		startCountdownTrigger = false;
 		tenStarFuelUpTrigger = false;
+		highscore = PlayerPrefs.GetInt ("highscore", highscore);
+
 	}
 
 	// Update is called once per frame

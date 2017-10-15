@@ -17,7 +17,8 @@ public class RocketPig : MonoBehaviour
 	public Text starsFinal;
 	public Text fuelFinal;
 	public static Text totalCounter;
-
+	
+	public static Text bestScore;
 
 
 	// Use this for initialization
@@ -31,6 +32,7 @@ public class RocketPig : MonoBehaviour
 		totalCounter = GameObject.Find ("totalScoreFinal").GetComponent<Text> ();
 		normalPig=pig.GetComponent<Image> ().sprite;
 		FuelScript.fuelout = false;
+		bestScore = GameObject.Find ("bestScore").GetComponent<Text> ();
 
 	}
 	
@@ -72,6 +74,16 @@ public class RocketPig : MonoBehaviour
 	void stopFlying ()
 	{
 		die = true;
+		//update high score
+		Debug.Log(PlayGameScene.highscore);
+		if (int.Parse (totalCounter.text) > PlayGameScene.highscore) {
+			PlayGameScene.highscore = int.Parse (totalCounter.text);
+			PlayerPrefs.GetInt ("highscore", PlayGameScene.highscore);
+		} else {
+			bestScore.text = "hii";
+		}
+		Debug.Log(PlayGameScene.highscore);
+		bestScore.text = PlayGameScene.highscore.ToString();
 		Invoke ("destroyPig", 3);
 		//stop the sky from scrolling, let the pig fall
 		ScrollSky.speed = 0f;
@@ -86,6 +98,8 @@ public class RocketPig : MonoBehaviour
 		//fuelFinal.text = PlayGameScene.fuelCounter.ToString ("00");
 		totalCounter.text = (PlayGameScene.fuelCounter + PlayGameScene.starCounter).ToString ("00") ;
 			
+
+
 	}
 
 	//pig physics collision with another object
