@@ -17,13 +17,14 @@ public class GameOverAnimations : MonoBehaviour {
 		//animate if game over
 		if (RocketPig.die==true && playonce==false){
 			Invoke ("gameOverAnimate", 0f);
+
 		}
 		
 	}
 	
 	void gameOverAnimate(){
 		clip.Play ();
-		Debug.Log (myAnimator.name+ " called GameOver"+ RocketPig.die +" "+ playonce + " fuel status: "+ FuelScript.fuelout);
+		//Debug.Log (myAnimator.name+ " called GameOver"+ RocketPig.die +" "+ playonce + " fuel status: "+ FuelScript.fuelout);
 		playonce = true;
 
 

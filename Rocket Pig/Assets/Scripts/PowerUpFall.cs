@@ -18,6 +18,8 @@ public class PowerUpFall : MonoBehaviour {
 	void Update () {
 	}
 
+
+	//should randomize the type of power up once I make more
 	void makePowerUp(){
 		if (RocketPig.die == false && PlayGameScene.fuelCounter>0 && PlayGameScene.blastOffTriggered) {
 			Vector3 position = new Vector3 (Random.Range (-350, 350), 800, 0);		

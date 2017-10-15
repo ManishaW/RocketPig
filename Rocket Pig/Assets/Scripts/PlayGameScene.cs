@@ -17,7 +17,8 @@ public class PlayGameScene : MonoBehaviour
 	public bool startCountdownTrigger;
 	public static bool blastOffTriggered;
 	public static float startTime;
-
+	public static bool tenStarFuelUpTrigger;
+	int tempStars;
 
 	void Start ()
 	{
@@ -27,13 +28,14 @@ public class PlayGameScene : MonoBehaviour
 		countdownText = GameObject.Find ("Countdown").GetComponent<Text> ();
 		fuelCounterScore = GameObject.Find ("fuelCount").GetComponent<Text> ();
 		starCounterScore = GameObject.Find ("starsScore").GetComponent<Text> ();
-
+		tempStars = -1;
 		//to be reset each time game is played
 		blastOffTriggered = false;
 		starCounter=0;
 		fuelCounter=0;
 		CountdownTimer = 3; //starting integer for timer (easily changeable)
 		startCountdownTrigger = false;
+		tenStarFuelUpTrigger = false;
 	}
 
 	// Update is called once per frame
@@ -42,7 +44,7 @@ public class PlayGameScene : MonoBehaviour
 		//update the scores 
 		starCounterScore.text = (starCounter).ToString ("00");
 		fuelCounterScore.text = (fuelCounter).ToString ("00");
-		Debug.Log (fuelCounterScore.text);
+		//Debug.Log (fuelCounterScore.text);
 		//do the 3 second countdown timer
 		if (CountdownTimer>0 && startCountdownTrigger==true) {
 			CountdownTimer = CountdownTimer - Time.deltaTime;
@@ -64,6 +66,12 @@ public class PlayGameScene : MonoBehaviour
 		}
 
 			
+		if ((starCounter % 2 == 0) && (starCounter != tempStars) && (starCounter != 0)) {
+			//give user more fuel
+			tenStarFuelUpTrigger = true;
+			tempStars = starCounter;
+			Debug.Log ("give extra fuel");
+		}
 		
 	}
 
@@ -97,7 +105,7 @@ public class PlayGameScene : MonoBehaviour
 	private void blastOff (){
 		//get rid off counddown
 		if (blastOffTriggered == false) {
-			Debug.Log ("blastOff!");
+			//Debug.Log ("blastOff!");
 			countdownText.gameObject.SetActive (false);
 			blastOffTriggered = true;
 			startTime = Time.time;

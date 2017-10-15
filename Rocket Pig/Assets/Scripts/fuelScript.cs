@@ -26,27 +26,34 @@ public class FuelScript : MonoBehaviour {
 		if (PlayGameScene.blastOffTriggered == false) {
 			float amount = ((float)PlayGameScene.fuelCounter / 100);
 			content.fillAmount = amount;
+			fuelstart = (float)PlayGameScene.fuelCounter;
 		} 
 		//fuel loss over time
 		if (PlayGameScene.blastOffTriggered == true && fuelout==false && RocketPig.die==false) {
-			fuelstart=((float)PlayGameScene.fuelCounter);
+
 			fuelPresent = fuelstart/100 - ((Time.time-PlayGameScene.startTime)/100) ;
-			Debug.Log ("this scene start time: " + (PlayGameScene.startTime).ToString());
-			Debug.Log ("delta time: " + (Time.time- (float)PlayGameScene.startTime).ToString());
+//			if (PlayGameScene.tenStarFuelUpTrigger == true) {
+//				Debug.Log ("FUEL UP");
+//				fuelPresent =+ 0.25f;
+//				PlayGameScene.tenStarFuelUpTrigger = false;
+//			} 
+//			Debug.Log ("this scene start time: " + (PlayGameScene.startTime).ToString());
+//			Debug.Log ("delta time: " + (Time.time- (float)PlayGameScene.startTime).ToString());
 			content.fillAmount = fuelPresent;
 			Debug.Log ("fuel running out " + fuelPresent );
-			//still needs work, Warning that fuel is running out
-			if (fuelPresent <= 0.25) {
-				//call animation
-				MainMenuOptions.fuelWarning.Play();
 
+			if (fuelPresent <= 0.25f) {
+				//call animation
+				//MainMenuOptions.fuelWarning.Play();
+				Debug.Log ("play warning");
 			}
 			//fuel is out!
 			if (fuelPresent <= 0) {
-				Debug.Log ("fuel out! " + fuelPresent );				
+				//Debug.Log ("fuel out! " + fuelPresent );				
 				fuelout = true;
 
 			}
+
 					
 		}
 	
