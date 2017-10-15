@@ -8,7 +8,7 @@ public class MainMenuOptions : MonoBehaviour
 {
 	public  AudioSource[] allAudio;
 
-	public AudioSource BGM;
+	public static AudioSource BGM;
 	public static AudioSource soundClick;
 	public static AudioSource playGameMusic;
 	public static AudioSource starCaught;

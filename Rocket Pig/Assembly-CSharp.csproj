@@ -59,6 +59,7 @@
      <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\GraphRequest.cs" />
      <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\MainMenu.cs" />
      <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\Pay.cs" />
+     <Compile Include="Assets\PauseMenuScript.cs" />
      <Compile Include="Assets\Scripts\CometFall.cs" />
      <Compile Include="Assets\Scripts\FBHolder.cs" />
      <Compile Include="Assets\Scripts\FuelScript.cs" />
