@@ -2,7 +2,7 @@ ________________________________________________________________________________
 # ROCKET PIG
 https://www.facebook.com/TheRocketPig/
 _____________________________________________________________________________________
-![alt text](https://github.com/ManishaW/RocketPig/blob/master/screenshots/1.jpg)
+
 CONTENTS
 1. About the game
 2. System Requirements
@@ -19,18 +19,14 @@ CONTENTS
 _____________________________________________________________________________________
 1) ABOUT
 __________________
-Rocket Pig is an addicting casual game that you can play on your android device. Try to get the high score by fueling up as fast as you can, collecting stars and powering up! Move comets and satellites out of the way and be sure to avoid any asteroid showers!
-
-File Size: right now-> 40.86 MB Goal: n/a
-
-
+Rocket Pig is an addicting casual game that you can play on your android device. Try to get the high score by fueling up as fast as you can, collecting stars and powering up! Be sure to dodge all the comets!
 _____________________________________________________________________________________
+
 2) SYSTEM REQUIREMENTS
 __________________
 Platform: Android (for now)
-Version: Android v. 2.3.1
-
 _____________________________________________________________________________________
+
 3) CONTROLS
 __________________
 a) Fueling up: 
@@ -43,16 +39,17 @@ c) Swipe to move comets and satelites out of the way:
 Move comets and satelites out of the way or avoid them. 
 
 _____________________________________________________________________________________
-4) SHOP
+4) GIFTS (coming soon)
 __________________
-At the shop you will meet Roger, the rooster. He can sell you all sorts of things like new space ships, new hairdos and accessories. You can also purchase a new theme for your fuel bar. To buy anything, you will have to pay him in stars. 
+Every 24 hours from the last time you collected a gift, Roger gives you a new one!  
+_____________________________________________________________________________________
+
+5) COLLECTION (coming soon)
+__________________
+All your gifts are placed here! Roger takes care of them and you can click the accessories or pre-power ups you want.  
 
 _____________________________________________________________________________________
-5) HIGH SCORE
-__________________
-The different high scores are recorded here. This includes the record for the amount of fuel collected, stars caught and overall score. (See your friends score here? someday)
 
-_____________________________________________________________________________________
 6) SETTINGS
 __________________
 On this page we have the option to change settings. The user can mute all music and sound effects or disable vibration. A dlete all scores option can be clicked and a reset game function is also present. An info button will give the user a brief overview of the game.
