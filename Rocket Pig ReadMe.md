@@ -2,7 +2,7 @@ ________________________________________________________________________________
 # ROCKET PIG
 https://www.facebook.com/TheRocketPig/
 _____________________________________________________________________________________
-![alt text](https://ibb.co/bRxmY6)
+![alt text](https://imgur.com/gallery/gF72Xn9)
 CONTENTS
 1. About the game
 2. System Requirements
