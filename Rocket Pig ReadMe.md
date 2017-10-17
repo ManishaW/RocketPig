@@ -10,8 +10,8 @@ CONTENTS
   a) Fueling up
   b) Tilt to catch stars, power ups and avoid comets 
   c) Swipe to move satelites out of the way (Coming soon)
-4. Shop (Coming soon)
-5. High Scores (Coming soon)
+4. Gifts (coming soon)
+5. Collection (Coming soon)
 6. Settings (Coming Soon)
 7. About the Creators
 
@@ -21,7 +21,7 @@ ________________________________________________________________________________
 __________________
 Rocket Pig is an addicting casual game that you can play on your android device. Try to get the high score by fueling up as fast as you can, collecting stars and powering up! Be sure to dodge all the comets!
 
-<div align = center><img src="https://github.com/ManishaW/RocketPig/blob/master/screenshots/2.jpg" width="200" >            <img src="https://github.com/ManishaW/RocketPig/blob/master/screenshots/1.jpg" width="200" >            <img src="https://github.com/ManishaW/RocketPig/blob/master/screenshots/3.jpg" width="200" >            <img src="https://github.com/ManishaW/RocketPig/blob/master/screenshots/4.jpg" width="200" > </div>
+<img src="https://github.com/ManishaW/RocketPig/blob/master/screenshots/2.jpg" width="200" >            <img src="https://github.com/ManishaW/RocketPig/blob/master/screenshots/1.jpg" width="200" >            <img src="https://github.com/ManishaW/RocketPig/blob/master/screenshots/3.jpg" width="200" >            <img src="https://github.com/ManishaW/RocketPig/blob/master/screenshots/4.jpg" width="200" > 
 _____________________________________________________________________________________
 
 2) SYSTEM REQUIREMENTS
