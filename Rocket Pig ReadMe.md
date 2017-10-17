@@ -1,7 +1,8 @@
 _____________________________________________________________________________________
 # ROCKET PIG
+https://www.facebook.com/TheRocketPig/
 _____________________________________________________________________________________
-![alt text](http://i.dailymail.co.uk/i/pix/2017/01/04/21/3BDA240A00000578-4089052-image-a-62_1483566005492.jpg)
+![alt text](https://ibb.co/bRxmY6)
 CONTENTS
 1. About the game
 2. System Requirements
