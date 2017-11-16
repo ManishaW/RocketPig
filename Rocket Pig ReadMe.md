@@ -10,7 +10,7 @@ CONTENTS
   a) Fueling up
   b) Tilt to catch stars, power ups and avoid comets 
   c) Swipe to move satelites out of the way (Coming soon)
-4. Gifts (coming soon)
+4. Gifts (Coming soon)
 5. Collection (Coming soon)
 6. Settings (Coming Soon)
 7. About the Creators
