@@ -32,21 +32,21 @@ ________________________________________________________________________________
 3) CONTROLS
 __________________
 a) Fueling up: 
-The first part of the game involves fueling up the rocket. At the bottom of the screen, slide as many corn into the slot as possible within 5 seconds. After that, it's blast off! (maybe changed to two tap alternation fuel up)
+The first part of the game involves fueling up the rocket. At the bottom of the screen, tap the buttons alternatively as possible within 3 seconds. After that, it's blast off!
 
-b) Tilt to catch stars, power ups and avoid asteroid showers: 
+b) Tilt to catch stars, power ups and avoid asteroids: 
 Tilt your device to move the pig side to side. Catch stars to gain more points. Get power ups to use them right away. Power ups can include invinsibility, shrinking and Xtra Fuel(?). 
 
-c) Swipe to move comets and satelites out of the way: 
+c) Swipe to move comets and satelites out of the way: (COMING SOON!) 
 Move comets and satelites out of the way or avoid them. 
 
 _____________________________________________________________________________________
-4) GIFTS (coming soon)
+4) GIFTS (COMING SOON!) 
 __________________
 Every 24 hours from the last time you collected a gift, Roger gives you a new one!  
 _____________________________________________________________________________________
 
-5) COLLECTION (coming soon)
+5) COLLECTION (COMING SOON!) 
 __________________
 All your gifts are placed here! Roger takes care of them and you can click the accessories or pre-power ups you want.  
 
@@ -54,9 +54,9 @@ ________________________________________________________________________________
 
 6) SETTINGS
 __________________
-On this page we have the option to change settings. The user can mute all music and sound effects or disable vibration. A dlete all scores option can be clicked and a reset game function is also present. An info button will give the user a brief overview of the game.
+On this page we have the option to change settings. The user can mute all music and sound effects or disable vibration. A delete high score option is available.
 
 _____________________________________________________________________________________
 7) ABOUT THE CREATORS
 __________________
-We are two sisters using our skills and free time to create something fun to play. I (Manisha W) am a software engineering student and this is my first time using Unity to make a mobile game. I am having a great time learning all the different things unity is capable of.  My sister (Nadisha W) is an achitecture student who enjoys art. She digitally drew all the characters, icons, logos and backgrounds. We really hope that people of all ages can enjoy this simple little game. Our goal for this game is 100 downloads on the Play Store.
+We are two sisters using our skills and free time to create an entertaining game for everyone. I (Manisha W) am a software engineering student and this is my first time using Unity to make a mobile game. I am having a great time learning all the different things unity is capable of.  My sister (Nadisha W) is an achitecture student who enjoys art. She digitally drew all the characters, icons, logos and backgrounds. We really hope that people of all ages can enjoy this simple little game. Our goal for this game is 100 downloads on the Play Store.
