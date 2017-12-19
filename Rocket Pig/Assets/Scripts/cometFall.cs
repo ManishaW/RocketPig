@@ -8,7 +8,7 @@ public class CometFall : MonoBehaviour {
 	public GameObject newComet;
 
 	void Start(){
-		float randoTime = Random.Range (0.7f, 2);
+		float randoTime = Random.Range (0.7f, 1.8f);
 		InvokeRepeating ("makeComet", 2f, randoTime);
 
 	}

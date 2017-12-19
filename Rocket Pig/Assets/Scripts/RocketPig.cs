@@ -33,6 +33,7 @@ public class RocketPig : MonoBehaviour
 		normalPig=pig.GetComponent<Image> ().sprite;
 		FuelScript.fuelout = false;
 		bestScore = GameObject.Find ("bestScore").GetComponent<Text> ();
+		bestScore.text = PlayerPrefs.GetInt ("highscore").ToString();
 
 	}
 	
@@ -75,15 +76,14 @@ public class RocketPig : MonoBehaviour
 	{
 		die = true;
 		//update high score
-		Debug.Log(PlayGameScene.highscore);
-		if (int.Parse (totalCounter.text) > PlayGameScene.highscore) {
-			PlayGameScene.highscore = int.Parse (totalCounter.text);
-			PlayerPrefs.GetInt ("highscore", PlayGameScene.highscore);
-		} else {
-			bestScore.text = "hii";
+		Debug.Log(totalCounter.text);
+		Debug.Log(PlayerPrefs.GetInt("highscore"));
+		if (int.Parse (totalCounter.text) > PlayerPrefs.GetInt("highscore")) {
+			PlayerPrefs.SetInt("highscore", int.Parse(totalCounter.text));
+			bestScore.text = totalCounter.text;
 		}
-		Debug.Log(PlayGameScene.highscore);
-		bestScore.text = PlayGameScene.highscore.ToString();
+
+
 		Invoke ("destroyPig", 3);
 		//stop the sky from scrolling, let the pig fall
 		ScrollSky.speed = 0f;
@@ -118,6 +118,7 @@ public class RocketPig : MonoBehaviour
 			//destory upon catching star and increment star counter, play sound
 			Destroy (col.gameObject);
 			PlayGameScene.starCounter += 1;
+			PlayGameScene.fuelCounter += 1;
 			MainMenuOptions.starCaught.Play ();
 
 		}

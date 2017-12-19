@@ -7,7 +7,7 @@ public class StarFall : MonoBehaviour {
 	public GameObject newStar;
 	// Use this for initialization
 	void Start () {
-		float randoTime = Random.Range (1f, 2f);
+		float randoTime = Random.Range (1f, 1.8f);
 		InvokeRepeating ("makeStar", 7f, randoTime);
 
 	}

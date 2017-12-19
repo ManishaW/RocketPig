@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\PreloaderScene.cs" />
      <Compile Include="Assets\Scripts\RocketPig.cs" />
      <Compile Include="Assets\Scripts\ScrollSky.cs" />
+     <Compile Include="Assets\Scripts\ShareApp.cs" />
      <Compile Include="Assets\Scripts\StarFall.cs" />
      <Compile Include="Assets\Scripts\cameraScreenSpace.cs" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />

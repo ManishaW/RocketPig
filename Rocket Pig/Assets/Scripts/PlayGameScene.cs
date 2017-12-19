@@ -19,8 +19,9 @@ public class PlayGameScene : MonoBehaviour
 	public static float startTime;
 	public static bool tenStarFuelUpTrigger;
 	int tempStars;
-	public static int highscore;
-
+	float countdownstarttime;
+	float restseconds;
+	
 	void Start ()
 	{
 		//set objects
@@ -37,44 +38,49 @@ public class PlayGameScene : MonoBehaviour
 		CountdownTimer = 3; //starting integer for timer (easily changeable)
 		startCountdownTrigger = false;
 		tenStarFuelUpTrigger = false;
-		highscore = PlayerPrefs.GetInt ("highscore", highscore);
+
 
 	}
-
+	 
+	void timerMode()
+	{
+		float guitime = Time.time - countdownstarttime;
+		Debug.Log (Time.time);
+		Debug.Log (countdownstarttime);
+		restseconds = CountdownTimer - guitime;
+		countdownText.text = Mathf.RoundToInt(restseconds).ToString();
+	}
 	// Update is called once per frame
 	void Update ()
 	{
 		//update the scores 
 		starCounterScore.text = (starCounter).ToString ("00");
 		fuelCounterScore.text = (fuelCounter).ToString ("00");
-		//Debug.Log (fuelCounterScore.text);
 		//do the 3 second countdown timer
+		Debug.Log("countdown: " + CountdownTimer);
+		Debug.Log ("time: " + Time.deltaTime);
 		if (CountdownTimer>0 && startCountdownTrigger==true) {
 			CountdownTimer = CountdownTimer - Time.deltaTime;
 			string displayTime = CountdownTimer.ToString ("0");
 			countdownText.text = displayTime;
-			
 		}
+
+
 		//countdown is 0 and pig is not flying yet
 		if (countdownText.text.Equals ("0") && blastOffTriggered == false) {
 			countdownText.text = "Blast off!";
-			ScrollSky.speed = 0.6f;
+			ScrollSky.speed = 0.8f;
 			leftFinger.gameObject.SetActive (false);
 			rightFinger.gameObject.SetActive (false);
 			countdownText.fontSize = 175;
 
 			//start flying
 			Invoke ("blastOff", 1.5f);
-			//Handheld.Vibrate(); //not sure efficiency
+
 		}
 
 			
-		if ((starCounter % 2 == 0) && (starCounter != tempStars) && (starCounter != 0)) {
-			//give user more fuel
-			tenStarFuelUpTrigger = true;
-			tempStars = starCounter;
-			Debug.Log ("give extra fuel");
-		}
+
 		
 	}
 
@@ -100,6 +106,7 @@ public class PlayGameScene : MonoBehaviour
 			leftFinger.interactable = true;
 			if (startCountdownTrigger == false) {
 				startCountdownTrigger = true;
+
 			}
 		}
 	}

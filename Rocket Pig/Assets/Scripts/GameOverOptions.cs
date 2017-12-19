@@ -19,6 +19,7 @@ public class GameOverOptions : MonoBehaviour {
 	{
 		SceneManager.LoadScene("Play page");
 		RocketPig.die = false;
+		PlayGameScene.blastOffTriggered = false;
 	}
 
 
@@ -27,6 +28,7 @@ public class GameOverOptions : MonoBehaviour {
 	{
 		SceneManager.LoadScene("Main menu");
 		RocketPig.die = false;
+		Time.timeScale = 1;
 
 	}
 }
